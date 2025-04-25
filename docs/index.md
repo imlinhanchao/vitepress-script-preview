@@ -50,10 +50,11 @@ export default defineConfig({
 });
 ```
 
-3. Register the component in your VitePress theme (usually `.vitepress/theme/index.js` or `.vitepress/theme/index.ts`): 在你的 VitePress 主题中注册组件（通常是 `.vitepress/theme/index.js` 或 `.vitepress/theme/index.ts`）：
+3. Register the component in your VitePress theme and import component style: 在你的 VitePress 主题中注册组件并导入组件样式：
 
 ```javascript
 import DefaultTheme from 'vitepress/theme';
+import 'vitepress-script-preview/components/style.css'; // import commonents styles
 import { CodePreview } from 'vitepress-script-preview/components';
 
 export default {
