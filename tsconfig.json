@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./packages/*"],
+    },
+    "skipLibCheck": true,
+    
+    /* Bundler mode */
+    "moduleResolution": "Node",
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": false,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* Output */
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "esModuleInterop": true,
+
+    /* Types */
+    "types": ["vite/client"]
+  },
+  "include": ["packages/**/*"]
+}
