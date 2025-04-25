@@ -80,7 +80,9 @@ console.error('This is an error message.');
 
 ## Register Context 注册上下文
 
-If you want to call functions or variables defined in the script within the `script-preview` container, you can register them using the `registerContext` function. For example: 如果你想在 `script-preview` 容器中调用脚本中定义的函数或变量，可以使用 `registerContext` 函数注册它们。例如：
+If you want to call functions or variables defined in the script within the `script-preview` container, you can register them using the `registerContext` function. For example: 
+
+如果你想在 `script-preview` 容器中调用脚本中定义的函数或变量，可以使用 `registerContext` 函数注册它们。例如：
 
 ```vue
 <script setup>

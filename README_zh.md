@@ -39,6 +39,7 @@ export default defineConfig({
 ```ts
 // docs/.vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme';
+import 'vitepress-script-preview/components/style.css'; // import commonents styles
 import { CodePreview } from 'vitepress-script-preview/components';
 
 export default {
