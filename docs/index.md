@@ -81,7 +81,7 @@ console.error('This is an error message.');
 
 If you want to call functions or variables defined in the script within the `script-preview` container, you can register them using the `registerContext` function. For example: 如果你想在 `script-preview` 容器中调用脚本中定义的函数或变量，可以使用 `registerContext` 函数注册它们。例如：
 
-```javascript
+```vue
 <script setup>
 import { registerContext } from 'vitepress-script-preview/components';
 
