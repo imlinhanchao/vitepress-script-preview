@@ -7,6 +7,7 @@ function pathResolve(dir) {
 }
 
 export default defineConfig({
+  base: 'vitepress-script-preview',
   title: 'Vitepress Script Preview Plugin 脚本预览插件',
   description: 'A VitePress plugin for code preview.',
   markdown: {
