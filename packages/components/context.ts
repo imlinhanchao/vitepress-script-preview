@@ -7,5 +7,5 @@ export function registerContext(context: any) {
   return context;
 }
 export function loadContext() {
-  return inject(CodePreviewContextKey);
+  return inject(CodePreviewContextKey, {});
 }

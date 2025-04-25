@@ -1,7 +1,8 @@
 {
   "name": "vitepress-script-preview",
+  "description": "A VitePress plugin for code preview.",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.5",
   "type": "module",
   "main": "dist/index.mjs",
   "module": "dist/index.cjs",
@@ -22,6 +23,19 @@
       "require": "./dist/index.cjs"
     }
   },
+  "homepage": "https://github.com/imlinhanchao/vitepress-script-preview#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imlinhanchao/vitepress-script-preview.git"
+  },
+  "bugs": "https://github.com/imlinhanchao/vitepress-script-preview/issues",
+  "keywords": [
+    "vitepress",
+    "plugins",
+    "component"
+  ],
+  "author": "Hancel.Lin",
+  "license": "MIT",
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
