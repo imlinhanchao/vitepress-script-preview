@@ -2,7 +2,7 @@
   "name": "vitepress-script-preview",
   "description": "A VitePress plugin for code preview.",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "main": "dist/index.mjs",
   "module": "dist/index.cjs",
@@ -10,7 +10,7 @@
     "dist",
     "README.md",
     "LICENSE",
-    "README_zh.md"
+    "README.zh-CN.md"
   ],
   "exports": {
     "./components": {
