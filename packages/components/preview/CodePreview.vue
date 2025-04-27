@@ -71,13 +71,13 @@ function copyCode () {
   }, 1000);
 }
 
+const context = loadContext();
 onMounted(() => {
   excuteCode();
 })
 
 function excuteCode() {
   try {
-    const context = loadContext();
     logs.splice(0, logs.length); // 清空日志
     // 使用 Function 构造函数执行代码
     new Function('logs', ...Object.keys(context), `
@@ -93,7 +93,7 @@ function excuteCode() {
       ${props.code}
     `)(logs, ...Object.values(context));
   } catch (error: any) {
-    console.log(`Error: ${error.message}`);
+    logs.push({ type: 'error', data: `Error: ${error.message}` });
   }
 }
 </script>

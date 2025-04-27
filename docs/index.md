@@ -26,9 +26,9 @@ console.warn('Warning example');
 console.debug('Debug example');
 console.dir(window); // Display the window object in the console
 // Get Listener output
-document.addEventListener('click', (ev) => {
+document.body.onclick = (ev) => {
   console.log('x:', ev.clientX, 'y:', ev.clientY);
-});
+};
 :::
 
 ## How to Use 如何使用
