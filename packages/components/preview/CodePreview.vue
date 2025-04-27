@@ -6,13 +6,14 @@
     <div class="code-content">
       <div class="code-toolbar">
         <button v-if="logs?.length" @click="toggleCode" :title="isCodeVisible ? '隐藏输出' : '查看输出'" :style="{
-          color: isCodeVisible ? '#2196F3' : undefined,
+          color: isCodeVisible ? 'var(--code-preview-primary-color)' : undefined,
           fontSize: '18px',
         }">
           <OutputIcon />
         </button>
         <button v-if="code" @click="copyCode" title="复制代码">
-          <CopyIcon />
+          <CopyIcon v-if="!copyLoading" />
+          <CheckIcon v-else style="color: var(--code-preview-primary-color)" />
         </button>
       </div>
       <div v-if="isCodeVisible" class="code-logs">
@@ -28,6 +29,7 @@
 import { onMounted, ref, reactive } from 'vue';
 import CopyIcon from '../icon/Copy.vue';
 import OutputIcon from '../icon/Output.vue';
+import CheckIcon from '../icon/Check.vue';
 import { loadContext } from '../context';
 
 const props = defineProps<{
@@ -42,13 +44,21 @@ function toggleCode () {
   isCodeVisible.value = !isCodeVisible.value;
 }
 
+const copyLoading = ref(false);
 function copyCode () {
+  if (copyLoading.value) {
+    return;
+  }
+  copyLoading.value = true;
   const code = document.createElement('textarea');
   code.value = props.code;
   document.body.appendChild(code);
   code.select();
   document.execCommand('copy');
   document.body.removeChild(code);
+  setTimeout(() => {
+    copyLoading.value = false;
+  }, 1000);
 }
 
 onMounted(() => {
@@ -95,6 +105,7 @@ onMounted(() => {
 
 <style>
 :root {
+  --code-preview-primary-color: #2196F3;
   --code-preview-bg: #f9f9f9;
   --code-preview-border: #ddd;
   --code-preview-content-bg: #f4f4f4;
