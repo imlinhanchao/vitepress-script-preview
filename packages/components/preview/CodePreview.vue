@@ -5,7 +5,7 @@
     </div>
     <div class="code-content">
       <div class="code-toolbar">
-        <button v-if="logs?.length" @click="toggleCode" :title="isCodeVisible ? '隐藏输出' : '查看输出'" :style="{
+        <button @click="toggleCode" :title="isCodeVisible ? '隐藏输出' : '查看输出'" :style="{
           color: isCodeVisible ? 'var(--code-preview-primary-color)' : undefined,
           fontSize: '18px',
         }">
@@ -65,47 +65,24 @@ function copyCode () {
 }
 
 onMounted(() => {
-  const originalConsoleLog = console.log;
-  const originalConsoleInfo = console.info;
-  const originalConsoleError = console.error;
-  const originalConsoleWarn = console.warn;
-  const originalConsoleDebug = console.debug;
-
   try {
-    // 捕获 console.log 输出
-    console.log = (...args: any[]) => {
-      logs.push({ type: 'log', data: args.join(' ') });
-    };
-    console.info = (...args: any[]) => {
-      logs.push({ type: 'info', data: args.join(' ') });
-    };
-    console.error = (...args: any[]) => {
-      logs.push({ type: 'error', data: args.join(' ') });
-    };
-    console.warn = (...args: any[]) => {
-      logs.push({ type: 'warn', data: args.join(' ') });
-    };
-    console.debug = (...args: any[]) => {
-      logs.push({ type: 'debug', data: args.join(' ') });
-    };
-    console.dir = (data) => {
-      logs.push({ type: 'dir', data });
-    };
-
     const context = loadContext();
     // 使用 Function 构造函数执行代码
-    new Function(...Object.keys(context), props.code)(...Object.values(context));
+    new Function('logs', ...Object.keys(context), `
+      // 捕获 console.log 输出
+      const console = {
+        log: (...args) => logs.push({ type: 'log', data: args.join(' ') }),
+        info: (...args) => logs.push({ type: 'info', data: args.join(' ') }),
+        error: (...args) => logs.push({ type: 'error', data: args.join(' ') }),
+        warn: (...args) => logs.push({ type: 'warn', data: args.join(' ') }),
+        debug: (...args) => logs.push({ type: 'debug', data: args.join(' ') }),
+        dir: (data) => logs.push({ type: 'dir', data }),
+      };
+      ${props.code}
+    `)(logs, ...Object.values(context));
   } catch (error: any) {
     console.log(`Error: ${error.message}`);
-  } finally {
-    // 恢复原始 console.log
-    console.log = originalConsoleLog;
-    console.info = originalConsoleInfo;
-    console.error = originalConsoleError;
-    console.warn = originalConsoleWarn;
-    console.debug = originalConsoleDebug;
   }
-
 })
 </script>
 

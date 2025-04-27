@@ -1,5 +1,7 @@
 # Vitepress Script Preview Plugin
 
+**English** / [中文](README.zh-CN.md)
+
 The Vitepress Script Preview Plugin is a plugin for VitePress that provides code preview and execution functionality. With this plugin, users can embed code blocks in documentation and view the output in real-time.
 
 ## Features

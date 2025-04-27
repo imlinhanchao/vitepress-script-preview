@@ -1,5 +1,7 @@
 # Vitepress Script Preview Plugin
 
+[English](README.md) / **中文**
+
 Vitepress Script Preview Plugin 是一个用于 VitePress 的插件，提供了代码预览和运行的功能。通过该插件，用户可以在文档中嵌入代码块，并实时查看代码的输出结果。
 
 ## 功能

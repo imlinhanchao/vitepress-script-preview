@@ -8,6 +8,11 @@
     "paths": {
       "@/*": ["./packages/*"],
     },
+    "typeRoots": [
+      "./node_modules/",
+      "./node_modules/@types/",
+      "./types"
+    ],
     "skipLibCheck": true,
     
     /* Bundler mode */
