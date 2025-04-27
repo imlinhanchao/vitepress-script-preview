@@ -19,6 +19,12 @@ registerContext({
 
 ::: script-preview expand=true
 
+console.log('1 + 2 =', add(1, 2)); // Call the add function
+console.info('Info example!');
+console.error('Error example');
+console.warn('Warning example');
+console.debug('Debug example');
+console.dir(window); // Display the window object in the console
 // Get Listener output
 document.addEventListener('click', (ev) => {
   console.log('x:', ev.clientX, 'y:', ev.clientY);

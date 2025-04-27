@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts" setup name="CodePreview">
-import { onMounted, ref, reactive, computed } from 'vue';
+import { onMounted, ref, reactive } from 'vue';
 import { loadContext } from '../context';
 import CopyIcon from '../icon/Copy.vue';
 import OutputIcon from '../icon/Output.vue';
