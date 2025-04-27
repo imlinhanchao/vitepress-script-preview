@@ -77,7 +77,9 @@ console.error('This is an error message.');
 :::
 ```
 
-> Note: The `expand` attribute is optional. If set to `true`, the code block will be expanded by default. 注意：`expand` 属性是可选的。如果设置为 `true`，代码块将默认展开。
+> [!TIP]
+> The `expand` attribute is optional. If set to `true`, the code block will be expanded by default.   
+> `expand` 属性是可选的。如果设置为 `true`，代码块将默认展开。
 
 ## Register Context 注册上下文
 
