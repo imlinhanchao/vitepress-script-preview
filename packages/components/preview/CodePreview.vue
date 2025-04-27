@@ -153,6 +153,7 @@ onMounted(() => {
 
 .code-slot {
   padding: 0 16px;
+  overflow: auto;
 }
 
 .code-toolbar button {

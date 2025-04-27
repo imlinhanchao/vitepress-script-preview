@@ -15,6 +15,14 @@ export default defineConfig({
       md.use(codePreviewPlugin, { clientOnly: true });
     }
   },
+  themeConfig: {
+    socialLinks: [
+      {
+        icon: 'github',
+        link: 'https://github.com/imlinhanchao/vitepress-script-preview/',
+      },
+    ],
+  },
   vite: {
     resolve: {
       alias: [

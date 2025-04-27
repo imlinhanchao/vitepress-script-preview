@@ -2,7 +2,7 @@
   "name": "vitepress-script-preview",
   "description": "A VitePress plugin for code preview.",
   "private": false,
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "main": "dist/index.mjs",
   "module": "dist/index.cjs",
@@ -23,7 +23,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "homepage": "https://github.com/imlinhanchao/vitepress-script-preview#readme",
+  "homepage": "https://imlinhanchao.github.io/vitepress-script-preview/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imlinhanchao/vitepress-script-preview.git"
@@ -31,8 +31,9 @@
   "bugs": "https://github.com/imlinhanchao/vitepress-script-preview/issues",
   "keywords": [
     "vitepress",
-    "plugins",
-    "component"
+    "plugin",
+    "script",
+    "preview"
   ],
   "author": "Hancel.Lin",
   "license": "MIT",
@@ -51,17 +52,15 @@
     "vitepress": "^1.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^12.1.2",
-    "@types/markdown-it-container": "^2.0.10",
     "@types/node": "^22.14.1",
     "@types/vue": "^2.0.0",
+    "@wsfe/vue-tree": "^4.1.1",
+    "@types/markdown-it-container": "^2.0.10",
     "@vitejs/plugin-vue": "^5.2.3",
+    "@rollup/plugin-typescript": "^12.1.2",
     "rollup": "^4.40.0",
     "rollup-plugin-dts": "^6.2.1",
     "tslib": "^2.8.1",
     "vite-plugin-dts": "^4.5.3"
-  },
-  "dependencies": {
-    "@wsfe/vue-tree": "^4.1.1"
   }
 }

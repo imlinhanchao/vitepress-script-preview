@@ -23,7 +23,7 @@
   }
 
   function isLeaf (node: any) {
-    return typeof node !== 'object' || node === null || node === undefined || Object.keys(node).length == 0;
+    return typeof node !== 'object' || node === null || node === undefined || ObjectKeys(node).length == 0;
   }
 
   function children (node: any, parentKey: string) {
@@ -35,7 +35,7 @@
         isLeaf: isLeaf(value),
       }));
     } else if (typeof node === 'object') {
-      return Object.entries(node).map(([key, value]) => ({
+      return ObjectEntries(node).map(([key, value]) => ({
         id: parentKey + '.' + key,
         key,
         value,
@@ -56,6 +56,34 @@
       }])
     } else {
       resolve(children(data.value, data.key));
+    }
+  }
+
+  function ObjectKeys(data: any) {
+    if (Array.isArray(data)) {
+      return data.map((_, index) => index);
+    } else if (typeof data === 'object') {
+      const keys = [];
+      for (const key in data) {
+        keys.push(key);
+      }
+      return keys;
+    } else {
+      return [];
+    }
+  }
+
+  function ObjectEntries(data: any) {
+    if (Array.isArray(data)) {
+      return data.map((value, index) => [index, value]);
+    } else if (typeof data === 'object') {
+      const entries = [];
+      for (const key in data) {
+        entries.push([key, data[key]]);
+      }
+      return entries;
+    } else {
+      return [];
     }
   }
 </script>
